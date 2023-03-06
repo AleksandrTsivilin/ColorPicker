@@ -13,46 +13,29 @@
     <title>ColorsManager</title>
 </head>
 <body>
-    <header class="header-container"></header>
-    <ul>
-        <li>
-            <h2></h2>
-            <button data-type="lock">
-                <i data-type="lock" class="fa-solid fa-lock-open"></i>
+    <section id="hint" class="hint">
+        <span>press space to change color set</span>
+        <button id="btn-hint">x</button>
+    </section>
+    <section id="menu" class="menu">
+        <div id="rows-control" class="rows-control">
+            <button data-type="remove" class="control-btn">
+                <span data-type="remove" class="remove-btn"></span>
             </button>
-        </li>
-        <li>
-            <h2></h2>
-            <button data-type="lock">
-                <i data-type="lock" class="fa-solid fa-lock-open"></i>
+            <span>rows</span>
+            <button data-type="add" class="control-btn">
+                <span class="add-btn" data-type="add"></span>
             </button>
-        </li>
-        <li>
-            <h2></h2>
-            <button data-type="lock">
-                <i data-type="lock" class="fa-solid fa-lock-open"></i>
-            </button>
-        </li>
-        <li>
-            <h2></h2>
-            <button data-type="lock">
-                <i data-type="lock" class="fa-solid fa-lock-open"></i>
-            </button>
-        </li>
-        <li>
-            <h2></h2>
-            <button data-type="lock">
-                <i data-type="lock" class="fa-solid fa-lock-open"></i>
-            </button>
-        </li>
-        <li>
-            <h2></h2>
-            <button data-type="lock">
-                <i data-type="lock" class="fa-solid fa-lock-open"></i>
-            </button>
-        </li>
+        </div>
+        
+        <button id="btn-menu" class="menu-btn">
+            <span id="btn-menu-span"></span>
+        </button>
+    </section>
+    
+    <ul>        
     </ul>
-    <footer class="footer-container"></footer>
     <script src="app.js"></script>
+    <script src="header.js"></script>
 </body>
 </html>

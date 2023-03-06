@@ -10,23 +10,177 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-.header-container,
-.footer-container{
-    width: 100%;
-    height: 10%;
-    background-color: white;
+.hint{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    padding-right: 30px;
+    border-radius: 5px;
+    font-size: small;
+    z-index: 1;
 }
 
+.hint span{
+    margin-right: 2px;
+}
+
+.hint button{
+    position: absolute;
+    top:1px;
+    right: 1px;
+    background-color: transparent;
+    border:transparent;
+    border-radius: 100%;
+    color:red;
+    padding: 2px 4px;
+    
+}
+
+.hint button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.menu{
+    position:absolute;
+    bottom:10px;
+    right: 10px;
+    display: flex;
+    overflow: hidden;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    z-index: 1;
+}
+
+
+.control-btn,
+.menu-btn{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+    border: transparent;    
+}
+
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top: -1px;
+    margin-left: -8px;
+    width: 16px;
+    height: 2px;
+    z-index: 1;
+    background-color: #0f265c;
+}
+
+.menu-btn span::before,
+.menu-btn span::after{
+    content: "";
+    transition-duration: 0.3s;
+}
+
+.menu-btn span::before{
+    transform: translateY(-5px);
+}
+
+.menu-btn span::after{
+    transform: translateY(5px);
+}
+
+.menu-btn-active span{
+    height: 0;
+}
+
+.menu-btn-active span::before{
+    transform: rotate(45deg);
+}
+
+.menu-btn-active span::after{
+    transform: rotate(-45deg);
+}
+
+
+.rows-control{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: small;
+    margin-right: -25px;
+    background-color: #fff;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    padding-right: 50px;
+
+    transition-duration: 0.5s;   
+    transform-origin: right center; 
+    transform:  translateX(100%);    
+    opacity: 0;
+}
+
+.rows-control-active{
+    transform:  translateX(0);
+    opacity: 1;
+}
+
+
+
+.add-btn,
+.remove-btn,
+.add-btn::after{
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -5px;
+    height: 2px;
+    width: 10px;
+    background-color: #fff;
+}
+
+.remove-btn{
+    background-color: red;
+}
+
+.add-btn{
+    background-color:#18973e;
+}
+
+.add-btn::after{
+    content: "";
+}
+
+.add-btn::after{
+    transform: rotate(90deg);
+    background-color: #18973e;
+}
+
+
 ul{
+    position: relative;
     list-style: none;
     display: flex;
-    height: 80%;
+    flex-wrap: wrap;
+    height: 100%;
     width: 100%; 
 }
 
+
 li{
-    flex: 1;  
-    display: flex;
+    flex: 1; 
+    display: flex;    
+    min-width: 20%;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -45,7 +199,8 @@ li h2:hover{
 
 li button{
     outline: none;
-    padding: 10px;
+    width: 60px;
+    height: 60px;
     font-size: 1.5rem;
     border: transparent;
     border-radius: 100%;
@@ -55,4 +210,33 @@ li button{
 li button:hover{
     background: rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+.tooltip{
+    font-size: small;
+    padding: 2px 4px;
+    border-radius: 5px;
+    border:transparent;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    
+}
+
+.tooltip-visible{
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+      }
+    
+      50% {
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+      }
 }
